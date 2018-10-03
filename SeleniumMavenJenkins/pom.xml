@@ -32,6 +32,11 @@
             <version>6.8</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>org.apache.rat</groupId>
+            <artifactId>apache-rat-plugin</artifactId>
+            <version>0.12</version>
+        </dependency>
     </dependencies>
     <packaging>jar</packaging>
     <properties>
