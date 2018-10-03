@@ -21,8 +21,10 @@ public class Selenium {
     
     @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
-    driver = new FirefoxDriver();
+    //System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
+    //System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
+    //driver = new FirefoxDriver();
+    //driver =new PhantomJSDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
@@ -30,14 +32,13 @@ public class Selenium {
   @Test
   public void testPrueba() throws Exception {
     driver.get(baseUrl);
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='selenium'])[1]/following::b[1]")).click();
     driver.findElement(By.id("lst-ib")).clear();
-    driver.findElement(By.id("lst-ib")).sendKeys("selenium");
-    driver.findElement(By.linkText("Selenium WebDriver")).click();
-    driver.findElement(By.id("container")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='supports the Selenium project'])[1]/following::h2[1]")).click();
+    driver.findElement(By.id("lst-ib")).sendKeys("seleniumhq");
+    driver.findElement(By.xpath("//*[@id=\"hplogo\"]")).click();
+    driver.findElement(By.name("btnK")).click();
+    driver.findElement(By.xpath("//*[@id=\"rso\"]/div/div/div[1]/div/div/h3/a")).click();
     try {
-      assertEquals(driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='supports the Selenium project'])[1]/following::h2[1]")).getText(), "Selenium WebDriver");
+      assertEquals(driver.findElement(By.xpath("//*[@id=\"mainContent\"]/h2[1]")).getText(), "What is Selenium?");
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
