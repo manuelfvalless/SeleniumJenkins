@@ -21,7 +21,7 @@ public class Selenium {
     
     @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    //System.setProperty("webdriver.gecko.driver","C:\\Users\\ManuelV\\Documents\\drivers\\geckodriver.exe");
+    System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
     driver = new FirefoxDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -29,7 +29,6 @@ public class Selenium {
 
   @Test
   public void testPrueba() throws Exception {
-   //driver.get("https://www.google.com/");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='selenium'])[1]/following::b[1]")).click();
     driver.findElement(By.id("lst-ib")).clear();
     driver.findElement(By.id("lst-ib")).sendKeys("selenium");
