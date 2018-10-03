@@ -8,6 +8,7 @@ import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.Select;
 /**
  *
@@ -21,9 +22,9 @@ public class Selenium {
     
     @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    //System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
-    //System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
-    //driver = new FirefoxDriver();
+    System.setProperty("webdriver.gecko.driver","Browser//geckodriver.exe");
+    //System.setProperty("phantomjs.binary.path","Browser//phantomjs.exe");
+    driver = new FirefoxDriver();
     //driver =new PhantomJSDriver();
     baseUrl = "https://www.google.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
