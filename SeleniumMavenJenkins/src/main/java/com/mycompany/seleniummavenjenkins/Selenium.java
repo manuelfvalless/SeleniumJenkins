@@ -29,6 +29,7 @@ public class Selenium {
 
   @Test
   public void testPrueba() throws Exception {
+    driver.get(baseUrl);
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='selenium'])[1]/following::b[1]")).click();
     driver.findElement(By.id("lst-ib")).clear();
     driver.findElement(By.id("lst-ib")).sendKeys("selenium");
