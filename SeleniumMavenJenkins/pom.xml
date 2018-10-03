@@ -24,7 +24,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.8</version>
-            <scope>test</scope>
+            <type>jar</type>
         </dependency>
     </dependencies>
     <packaging>jar</packaging>
