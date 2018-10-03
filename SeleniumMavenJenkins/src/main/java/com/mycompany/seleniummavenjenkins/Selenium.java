@@ -87,10 +87,10 @@ public class Selenium {
     }
   }
     
-    public static void main(String[] args) throws Exception {
+   /* public static void main(String[] args) throws Exception {
         Selenium selenium = new Selenium();
         selenium.setUp();
         selenium.testPrueba();
         selenium.tearDown();
-    }    
+    }   */ 
 }
