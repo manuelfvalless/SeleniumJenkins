@@ -79,7 +79,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>testng.xml</goal>
+                            <goal>example.testng.xml</goal>
                         </goals>
                     </execution>
                 </executions>
