@@ -20,7 +20,7 @@
     
     <test name="Test">
         <classes>
-            <class name="NewTest"/>
+            <class name="example.NewTest"/>
         </classes>
     </test>
 </suite>
