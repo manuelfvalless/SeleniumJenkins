@@ -18,9 +18,9 @@
     </test>
     -->
     
-    <test name="example suite">
+    <test name="Test">
         <classes>
-            <class name="example.NewTest"/>
+            <class name="NewTest"/>
         </classes>
     </test>
 </suite>
