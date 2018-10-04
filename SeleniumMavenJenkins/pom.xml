@@ -79,7 +79,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>test-jar</goal>
+                            <goal>testng.xml</goal>
                         </goals>
                     </execution>
                 </executions>
