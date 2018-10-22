@@ -32,8 +32,10 @@ public class Selenium {
     driver.get(baseUrl);
     driver.findElement(By.id("vUSUARIONOMBRE")).clear();
     driver.findElement(By.id("vUSUARIONOMBRE")).sendKeys("mvalles");
+    Thread.sleep(1000);
     driver.findElement(By.id("vUSUARIOPASSWORD")).clear();
-    driver.findElement(By.id("vUSUARIOPASSWORD")).sendKeys("Test01.");
+    driver.findElement(By.name("vUSUARIOPASSWORD")).sendKeys("Test01.");
+    Thread.sleep(1000);
     driver.findElement(By.name("BTNENTER")).click();
     driver.findElement(By.linkText("Administración Medios de Pago")).click();
     driver.findElement(By.id("vVERBITACORA_0001")).click();
