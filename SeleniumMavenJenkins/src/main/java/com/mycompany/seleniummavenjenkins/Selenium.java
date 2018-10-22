@@ -1,15 +1,12 @@
 package com.mycompany.seleniummavenjenkins;
 
-import java.awt.Robot;
-import java.util.regex.Pattern;
+
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.support.ui.Select;
+
 /**
  *
  * @author ManuelV
@@ -26,20 +23,22 @@ public class Selenium {
     //System.setProperty("phantomjs.binary.path","Browser//phantomjs.exe");
     driver = new FirefoxDriver();
     //driver =new PhantomJSDriver();
-    baseUrl = "https://www.google.com/";
+    baseUrl = "http://54.235.81.157/carteratest/seclogin.aspx";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
   public void testPrueba() throws Exception {
     driver.get(baseUrl);
-    driver.findElement(By.id("lst-ib")).clear();
-    driver.findElement(By.id("lst-ib")).sendKeys("seleniumhq");
-    driver.findElement(By.xpath("//*[@id=\"hplogo\"]")).click();
-    driver.findElement(By.name("btnK")).click();
-    driver.findElement(By.xpath("//*[@id=\"rso\"]/div/div/div[1]/div/div/h3/a")).click();
+    driver.findElement(By.id("vUSUARIONOMBRE")).clear();
+    driver.findElement(By.id("vUSUARIONOMBRE")).sendKeys("mvalles");
+    driver.findElement(By.id("vUSUARIOPASSWORD")).clear();
+    driver.findElement(By.id("vUSUARIOPASSWORD")).sendKeys("Test01.");
+    driver.findElement(By.name("BTNENTER")).click();
+    driver.findElement(By.linkText("Administración Medios de Pago")).click();
+    driver.findElement(By.id("vVERBITACORA_0001")).click();
     try {
-      assertEquals(driver.findElement(By.xpath("//*[@id=\"mainContent\"]/h2[1]")).getText(), "What is Selenium?");
+      assertEquals(driver.findElement(By.id("span_W0016W0037BITACORAMANDATOSPACPATACCION_0001")).getText(), "Activación");
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
@@ -87,10 +86,10 @@ public class Selenium {
     }
   }
     
-   /* public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Selenium selenium = new Selenium();
         selenium.setUp();
         selenium.testPrueba();
         selenium.tearDown();
-    }   */ 
+    }   
 }
